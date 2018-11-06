@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/display/" method="post">
+    {% csrf_token %}
+<table align="center" bgcolor="#ffd700" border="2">
+  <tr>
+      <th>Expenses Form </th>
+  </tr>
+<tr>
+    <td>
+        <input type="number" placeholder="Entry No" name="no" required>
+    </td>
+</tr>
+
+    <tr>
+        <td>
+        <input type="date" placeholder="Date" min="2018-10-12" max="" name="date" required>
+        </td>
+    </tr>
+<tr>
+    <td>
+        <input type="number" placeholder="Amount" name="amount" required>
+    </td>
+</tr>
+    <tr>
+        <td>
+            <select  name="items">
+            <option>Select</option>
+            <option>Veg Biryani</option>
+            <option>Chicken Biryani</option>
+            <option>Mutton Biryani</option>
+            <option>France Biryani</option>
+            <option>chicken Dum Biryani</option>
+            <option>Mutton Dum Biryani</option>
+            <option>Fish Biryani</option>
+           </select>
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="h1" value="Ismail">Ismail<br>
+            <input type="checkbox" name="h1" value="Anji">Anji<br>
+            <input type="checkbox" name="h1" value="Chanti">Chanti<br>
+            <input type="checkbox" name="h1" value="Balaram">Balaram<br>
+            <input type="checkbox" name="h1" value="satish">Satish<br>
+            <input type="checkbox" name="h1" value="Rakesh">Rakesh<br>
+            <input type="checkbox" name="h1" value="Sai Teja">Sai Teja<br>
+            <input type="checkbox" name="h1" value="Rajesh">Rajesh<br>
+            <input type="checkbox" name="h1" value="Harsha">Harsha<br>
+            <input type="checkbox" name="h1" value="Vamsi">Vamsi<br>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Save">
+        </td>
+    </tr>
+
+</table>
+    </form>
+ <br>
+<br>
+<table align="center" border="2" bgcolor="#8a2be2">
+       <tr>
+           <th colspan="4">Expenses Details</th>
+       </tr>
+        {% for x,y in ans.items %}
+            <tr>
+            <td>{{ x }}</td>
+            <td>{{ y }}</td>
+            </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>
